@@ -1,8 +1,5 @@
 # php-microblog
-A very small blogging engine written in PHP
-
----
-
+A very small blogging engine written in PHP  
 Just one file is all it takes.  
 Based off the work done on [engineertf](https://github.com/TheDerpySage/engineertf).
 
