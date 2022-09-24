@@ -1,13 +1,8 @@
 # php-microblog
-<<<<<<< HEAD
 
 A very small blogging engine written in PHP
 
----
-
-=======
 A very small blogging engine written in PHP  
->>>>>>> c6e7d90f0e9caffc5f7982cd8d293879e7f0ff90
 Just one file is all it takes.  
 Based off the work done on [engineertf](https://github.com/TheDerpySage/engineertf).
 
@@ -23,11 +18,6 @@ The blog directory contains the placeholder posts you can use as examples.
 
 Uses [parsedown](https://github.com/erusev/parsedown) for full render.
 
-<<<<<<< HEAD
 ## index.php
 
-=======
-index.php
----------
->>>>>>> c6e7d90f0e9caffc5f7982cd8d293879e7f0ff90
 Supplied as an example. You can embed the PHP block into you own index page to render Recent Posts.
