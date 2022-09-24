@@ -20,8 +20,8 @@
 
     # POSTS STORED IN
     $dir = 'blog';
-    # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED (THERE ARE 2 HEADER LINES, BUT THE FIRST ONE HAS HARD CODED HANDLING)
-    $RENDER_LINES = 5;
+    # CHANGE THIS TO CHANGE THE NUMBER OF LINES RENDERED
+    $RENDER_LINES = 3;
 ?>
 <head>
     <title>blog</title>
@@ -61,6 +61,9 @@
                                             # Limits the number of lines that we render
                                             $handler = fopen("$dir/$post/$file", "r");
                                             $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$post)\n";
+                                            $md .= fgets($handler); // Blank Line
+                                            $md .= fgets($handler); // Date
+                                            $md .= fgets($handler); // Blank Line
                                             for ( $x = 0; $x < $RENDER_LINES; $x++ ) {
                                                 $md .= fgets($handler);
                                             }
@@ -83,7 +86,7 @@
                                 foreach($files as $file){
                                     if (explode(".", $file)[1] == "md") {
                                         $handler = fopen("$dir/$post/$file", "r");
-                                        $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$post)\n";
+                                        $md = "#[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$post)\n";
                                         while(!feof($handler))
                                             $md .= fgets($handler);
                                         fclose($handler);
@@ -97,6 +100,15 @@
                             }
                         }
                     ?>
+                </div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div style="text-align: center;">
+                    <p>
+                        <a href='.'>index</a>
+                    </p>
                 </div>
             </td>
         </tr>
