@@ -39,13 +39,6 @@
         <tr>
             <td>
                 <div>
-                    <h1>Blog</h1>
-                </div>
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div>
                     <?php
                         if(empty($post)) {
                             # Include scandir2 to exclude . and .. folder paths
@@ -60,7 +53,8 @@
                                         if (explode(".", $file)[1] == "md") {
                                             # Limits the number of lines that we render
                                             $handler = fopen("$dir/$post/$file", "r");
-                                            $md = "##[" . trim(substr(fgets($handler), 2)) . "](blog.php?post=$post)\n";
+                                            $title = trim(substr(fgets($handler), 2));
+                                            $md = "##[$title](blog.php?post=$post)\n";
                                             $md .= fgets($handler); // Blank Line
                                             $md .= fgets($handler); // Date
                                             $md .= fgets($handler); // Blank Line

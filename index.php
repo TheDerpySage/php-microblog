@@ -31,6 +31,7 @@
 <body>
 	<div>
 		<h1>index</h1>
+		<h3><a href="blog.php">blog</a></h3>
 		<?php
 			$posts = scandir2($dir);
 			if(!empty($posts)){
